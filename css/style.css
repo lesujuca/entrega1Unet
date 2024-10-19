@@ -1,0 +1,531 @@
+/* Estilo para el body, se inicializan algunos valores */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(16, 103, 114, 0.068);
+    color: #444;
+}
+
+/* Estilo para el header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    position: relative;
+}
+
+#header-image {
+    display: block;
+    margin: 10px auto;
+    max-width: 100px; /* Ajusta este valor según tus necesidades */
+    border-radius: 50%; /* Esto hará que la imagen sea circular */
+  }
+
+/* Estilo para el h1 que se encuentra en el header */
+header h1 {
+    margin: 0;
+}
+
+/* Estilo para el menú de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Esilo al toggle de modo claro y oscuro */
+#toggle-mode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #e2dfdf;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#toggle-mode .fa-moon {
+    transition: color 0.3s ease;
+}
+
+/* Estilo para el body como marco */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+/* Estilo para el cuerpo principal */
+main {
+    flex: 3;
+    padding-right: 10px;
+    min-width: 400px;
+}
+
+/* Estilo para las secciones del cuerpo principal */
+section {
+    margin-bottom: 20px;
+}
+
+section p {
+    margin: 0;
+}
+
+section a {
+    color: #add8e6;
+    text-decoration: underline;
+}
+
+/* Estilo para la sección de proyectos */
+.project-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background: linear-gradient(to bottom, #ededed, #e7e5e5);
+    box-shadow: 10px 10px 5px #0009;
+    color: #bbbebb;
+    border-radius: 8px;
+    padding: 5px;
+    width: 10%;
+    min-width: 350px;
+    font-size: 1.1em;
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card p {
+    margin: 0;
+    padding-top: 1.5em;
+}
+
+.border-botton {
+    border-bottom: 1px solid #0004;
+}
+
+/* Estilo para la barra lateral */
+aside {
+    flex: 1; /* Ajusta para ocupar menos espacio */
+    padding: 1em;
+    background-color: #f4f4f4;
+    font-size: .8em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10px; /* Separación lateral */
+    min-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    margin-top: 0;
+}
+
+/* Estilo para las noticias */
+#news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#news-list li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Estilo para enlaces */
+#news-list a {
+    text-decoration: none;
+    color: #2076d8;
+}
+
+#news-list a:visited {
+    color: #2076d8;; /* Mismo color que el enlace no visitado */
+}
+
+/* Estilo para la sección del clima en San Cristóbal */
+aside .extra-section {
+    margin-top: 20px;
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0 0 0;
+}
+
+.social-links a {
+    margin: 0 1em;
+    color: rgb(101, 151, 243);
+    text-decoration: none;
+}
+
+address {
+    margin: 20px 0;
+    font-style: normal;
+}
+
+address a {
+    color: #fff;
+    text-decoration: none;
+}
+
+address p {
+    text-align: center;
+}
+
+.sectionAddress {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilo para las ventanas modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: transparent;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para las cabeceras */
+h1 {
+    font-size: 2.2em;
+    color: rgb(101, 151, 243);
+}
+
+h2 {
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    padding: 10px;
+    color: rgba(12, 42, 97, 0.664);
+}
+
+h3 {
+    margin: .2em;
+    color: rgba(101, 151, 243, 0.664);
+    padding-bottom: .4em;;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/*Estilos para el formulario y sus componentes */
+form {
+    background: linear-gradient(to bottom, #ededed, #cecccc);
+    padding: 20px 0;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 0px 35px #0009;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_input {
+    width: 100%;
+    padding: 6px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, textarea, select {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    border: none;
+    border-left: 2px solid #999;
+    box-shadow: 0px 0px 15px #0004;
+    background-color: transparent;
+    color: #726e6e85;
+    margin-top: 10px;
+}
+
+textarea {
+    min-width: 90%;
+    max-height: 200px;
+    min-height: 100px;
+    resize: vertical;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+option {
+    background-color: #ededed;
+}
+
+button[type="submit"] {
+    background-color: #a9b1af; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado dentro del botón */
+    font-size: 1em; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(101, 151, 243); /* Color de fondo al pasar el mouse */
+}
+
+label {
+    font-size: 1.2em;
+    align-self: flex-start;
+    padding-left: 5%;
+}
+
+/* Estilo para los componentes details y summary */
+details {
+    background-color: #f7f6f6;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+details[open] {
+    border-bottom: 1px solid #ddd;
+    background-color: #f0efef;
+}
+
+summary {
+    background-color: transparent;
+    border-bottom: 1px solid #ddd;
+    padding: 9px;
+    font-size: 1rem;
+}
+
+/* Estilo para los párrafos */
+p {
+    text-align: justify;
+}
+
+.indented {
+    text-indent: 50px; /* Define la cantidad de indentación en píxeles */
+    padding: 0px 20px;
+}
+
+.indented-list {
+    padding: 0px 20px;
+    padding-left: 100px; /* Aplica padding a la izquierda para indentar los elementos de lista */
+}
+
+.centrado {
+    text-align: center;
+}
+
+/* Estilo para el iframe usado en la ubicación */
+iframe {
+    width: 400px; /* Ancho movido al CSS */
+    height: 400px; /* También puedes mover la altura si quieres */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*Modo Light/Oscuro*/
+body.dark-mode {
+    background-color: #838282;
+    color: #e0e0e0;
+}
+
+body.dark-mode details {
+    background-color: #333;
+    color: #dad5d5;
+}
+
+body.dark-mode h2 {
+    color: #fff;
+}
+
+body.dark-mode .project-card h3 {
+    color: rgba(61, 63, 61, 0.664);
+}
+
+body.dark-mode .extra-section {
+    background-color: #838282;
+    color: #fff;
+}
+
+body.dark-mode aside{
+    background-color: #a7a5a5;
+}
+
+body.dark-mode .extra-section {
+    background-color: #838282;
+    color: #fff;
+}
+
+body.dark-mode .project-card {
+    background: linear-gradient(to bottom, #b8b6b6, #757474);
+    color: #dee0de;
+}
+
+body.dark-mode #news-list li {
+    background-color: #838282;
+}
+
+body.dark-mode #news-list a {
+    text-decoration: none;
+    color: #eff1f3;
+}
+
+body.dark-mode form {
+    background: linear-gradient(to bottom, #c0bfbf, #727171);
+}
+  
+/* Estilos para el modo oscuro */
+body.dark-mode input, body.dark-mode textarea, body.dark-mode input::placeholder, body.dark-mode textarea::placeholder {
+    color: #fdfdfd; /* Color del placeholder en modo oscuro */
+}
+
+body.dark-mode select {
+    color: #fdfdfd; /* Color del texto del select en modo oscuro */
+    background-color: transparent;
+}
+
+body.dark-mode option {
+  background-color: transparent; /* Color de fondo de las opciones en modo oscuro */
+  color: #636364e1; /* Color del texto de las opciones en modo oscuro */
+}
+
+/* Media query para pantallas con ancho menor o igual a 1650px */
+@media (max-width: 1650px) {
+    .project-card {
+        min-width: 450px;
+    }
+}
+
+/* Media query para pantallas con ancho menor o igual a 1411px */
+@media (max-width: 1411px) {
+    .project-card {
+        min-width: 400px;
+    }
+}
+
+/* Media query para pantallas con ancho menor o igual a 795px */
+@media (max-width: 795px) {
+    .content-wrapper {
+        flex-direction: column; /* Cambia la dirección a columna */
+    }
+
+    aside {
+        margin-left: 0; /* Resetea la separación lateral */
+        margin-top: 20px; /* Añade margen superior para separar del main */
+    }
+
+    .project-card {
+        min-width: 500px;
+    }
+}
+
+/* Media query para pantallas con ancho menor o igual a 615px */
+@media (max-width: 615px) {
+    main {
+        padding: 0 10px; /* Ajusta el padding */
+        min-width: 200px;
+    }
+
+    section {
+        margin: 0;
+        padding: 0px;
+        box-sizing: border-box; /* Incluye el padding en el ancho */
+    }
+
+    .project-card {
+        width: 100%; /* Asegura que las tarjetas ocupen todo el ancho */
+        min-width: 200px;
+    }
+
+    iframe {
+        width: 250px; /* Ancho movido al CSS */
+        height: 250px; /* También puedes mover la altura si quieres */
+    }
+
+    .indented-list {
+        padding-left: 60px; /* Aplica padding a la izquierda para indentar los elementos de lista */
+    }
+}
+
+/* Media query para pantallas con ancho menor o igual a 349px */
+@media (max-width: 349px) {
+    aside {
+        min-width: 150px;
+    }
+
+    h2 {
+        padding: 0;
+    }
+
+    iframe {
+        width: 200px; /* Ancho movido al CSS */
+        height: 200px; /* También puedes mover la altura si quieres */
+    }
+
+    .indented-list {
+        padding-left: 30px; /* Aplica padding a la izquierda para indentar los elementos de lista */
+    }
+}
