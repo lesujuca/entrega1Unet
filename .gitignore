@@ -1,0 +1,5 @@
+# Ignorar archivos .mp4
+*.mp4
+
+# Ignorar archivos .jpg
+*.png
