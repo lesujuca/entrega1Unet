@@ -24,4 +24,6 @@ La página está diseñada para ser resposive con unos colores pastel y alternan
 
 También se hace uso del localStorage para guardar el tema que seleccionó el usuario de manera que al volver abrir la page cargaría el tema que dejó seleccionado
 
+El link para ver la presentación en vivo es: https://youtu.be/H252JDyVuLo
+
 Espero sea de su agrado, saludos!!!
