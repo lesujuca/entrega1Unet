@@ -22,4 +22,6 @@ En la parte inferior se encuentra la sección de footer donde muestro los derech
 
 La página está diseñada para ser resposive con unos colores pastel y alternando en unos colores más oscuros manteniendo el mismo aspecto.
 
+También se hace uso del localStorage para guardar el tema que seleccionó el usuario de manera que al volver abrir la page cargaría el tema que dejó seleccionado
+
 Espero sea de su agrado, saludos!!!
