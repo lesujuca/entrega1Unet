@@ -147,3 +147,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// función para consumir la api de noticias y mostrarla en el div de noticias
+async function proyectosList() {
+    const url = `http://127.0.0.1:8000/api/proyectosList`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const projectGallery = document.getElementById('project-gallery');
+        projectGallery.innerHTML = ''; // Limpia la lista antes de agregar los proyectos
+        console.log(data);
+        data.forEach(proyecto => {
+            const listProy = document.createElement('div');
+            listProy.classList.add('project-card'); // Agrega la clase al div
+            const h3 = document.createElement('h3');
+            const p = document.createElement('p');
+            h3.innerText = proyecto.nombre_proyecto;
+            p.textContent = proyecto.descripcion_proyecto;
+            listProy.appendChild(h3);
+            listProy.appendChild(p);
+            projectGallery.appendChild(listProy); // Añadir el div al project-gallery
+        });
+    } catch (error) {
+        console.error('Error Lista Proyectos:', error);
+    }
+}

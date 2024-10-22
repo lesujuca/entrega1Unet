@@ -85,8 +85,8 @@
                 <section id="projects">
                     <fieldset>
                         <legend><h2 aria-label="Proyectos">Proyectos</h2></legend>
-                        <div class="project-gallery">
-                            <div class="project-card">
+                        <div id="project-gallery">
+                            <!-- <div class="project-card">
                                 <h3 class="border-botton">Proyecto Vulnerability</h3>
                                 <p class="indented">En este proyecto se mejoró la parte visual del sistema, se actualizó el jquery a la última versión, se realizó mejoras en el login para que no viajara el password del page hacia el servlet, sino que através de una librería de javascript encripte el password y luego es recibida por el servlet y convertida en texto nuevamente para enviarla al as400. Igualmente se suprimió la versión log4j obsoleta debido que presentaba vulnerabilidades en el sistema.</p>
                             </div>
@@ -97,7 +97,7 @@
                             <div class="project-card">
                                 <h3 class="border-botton">Custodia de Fondos Líquidos</h3>
                                 <p class="indented">Se desarrolló el módulo de custodia de fondos líquidos. En este módulo se colaboró en toda la parte web y java del sistema. Este módulo corresponde al manejo de recaudar todas la cuentas que no tienen movimiento durante más de 10 año y son recibidas para ser resguardadas en caso de aparición del titular o algún beneficiario.</p>
-                            </div>
+                            </div> -->
                         </div>
                     </fieldset>
                 </section>
@@ -237,6 +237,7 @@
             clima();
             setInterval(fetchNews, 600000);
             setInterval(clima, 600000);
+            proyectosList();
         </script>
     </body>
 </html>
