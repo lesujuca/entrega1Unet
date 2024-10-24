@@ -35,12 +35,13 @@
             <h1 aria-label="Título Principal">Curso Full Stack - UNET</h1>
             <h3 aria-label="Título Descriptivo y Ponente">Primera Entrega - Juan Carlos Lerma Suárez</h3>
             <nav aria-label="Menú principal">
-                <ul>
+                <ul id="menu-principal">
                     <li><a aria-label="Enlace para expandir acerca de..." href="#about" id="expandAbout">Sobre mí</a></li>
                     <li><a aria-label="Enlace para expandir habilidades" href="#skills" id="expandHabilidades">Habilidades</a></li>
-                    <li><a aria-label="Enlace para expandir participación de proyectos" href="#projects">Proyectos</a></li>
+                    <li id="proyectos"><a aria-label="Enlace para expandir participación de proyectos" href="#projects">Proyectos</a></li>
                     <li><a aria-label="Enlace para abrir ventana de contacto" id="openModalContact" href="#">Contacto</a></li>
                     <li><a aria-label="Enlace para abrir ventana de mi ubicación" id="openModalUbicacion" href="#">Ubicación</a></li>
+                    <li id="adminProyectos"><a aria-label="Enlace para administración de proyectos" href="#projects">Admin Proyectos</a></li>
                 </ul>
             </nav>
         </header>
@@ -99,11 +100,28 @@
                                 <p class="indented">Se desarrolló el módulo de custodia de fondos líquidos. En este módulo se colaboró en toda la parte web y java del sistema. Este módulo corresponde al manejo de recaudar todas la cuentas que no tienen movimiento durante más de 10 año y son recibidas para ser resguardadas en caso de aparición del titular o algún beneficiario.</p>
                             </div> -->
                         </div>
+                        <div id="project-admin">
+                            <table id="project-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del Proyecto</th>
+                                        <th>Descripción</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="action-button add-button" onclick="mostrarProyecto(0, 'Add')">Registrar</button>
+                        </div>
                     </fieldset>
                 </section>
             </main>
 
             <aside role="complementary" aria-label="Clima en la ciudad de San Cristóbal, Noticias de Informática y Computación">
+                <div class="btn-log btn-login" onclick="document.getElementById('loginModal').style.display='block'">Iniciar Sesión</div>
+
                 <div class="extra-section">
                     <h2>Clima Actual en San Cristóbal</h2>
                     <div id="weather">
@@ -150,18 +168,18 @@
                     <form>
                         <h2>Contacto</h2>
                         <div class="form_input">
-                            <label for="name">Nombre Completo:</label>
-                            <input type="text" id="name" name="name" placeholder="Nombre completo" required />
+                            <label for="name_contact">Nombre Completo:</label>
+                            <input type="text" id="name_contact" name="name_contact" placeholder="Nombre completo" required />
                         </div>
 
                         <div class="form_input">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Email" required />
+                            <label for="email_contact">Email:</label>
+                            <input type="email" id="email_contact" name="email_contact" placeholder="Email" required />
                         </div>
 
                         <div class="form_input">
-                            <label for="estado">Estado: (de donde me escribes)</label>
-                            <select id="estado" name="estado">
+                            <label for="estado_contact">Estado: (de donde me escribes)</label>
+                            <select id="estado_contact" name="estado_contact">
                                 <option value="">Seleccione</option>
                                 <option value="amazonas">Amazonas</option>
                                 <option value="anzoategui">Anzoátegui</option>
@@ -190,8 +208,8 @@
                         </div>
 
                         <div class="form_input">
-                            <label for="nivelEducacion">Nivel Educación:</label>
-                            <input list="nivelEducacion" name="nivelEducacion" placeholder="Seleccione o escriba nivel de secundaria" />
+                            <label for="nivelEducacion_contact">Nivel Educación:</label>
+                            <input list="nivelEducacion_contact" name="nivelEducacion_contact" placeholder="Seleccione o escriba nivel de secundaria" />
                             <datalist id="nivelEducacion" name="nivelEducacion">
                                 <option value="Primaria">Primaria</option>
                                 <option value="Secundaria">Secundaria</option>
@@ -202,8 +220,8 @@
                         </div>
                         
                         <div class="form_input">
-                            <label for="message">Mensaje:</label>
-                            <textarea id="message" name="message" maxlength="500" required placeholder="Escriba una breve descripción ..."></textarea>
+                            <label for="message_contact">Mensaje:</label>
+                            <textarea id="message_contact" name="message_contact" maxlength="500" required placeholder="Escriba una breve descripción ..."></textarea>
                         </div>
 
                         <div class="form_input">
@@ -225,19 +243,59 @@
                             frameborder="0" style="border:0"
                             src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCWbAh36HLTbCeLWiMsc2qT_ByMTUqQMQA&center=7.77479,-72.22115&zoom=20" allowfullscreen>
                         </iframe>
+                    </form>
                 </section>
+            </div>
+        </div>
+
+        <!-- Ventana Modal Login -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
+                <form id="loginForm" onsubmit="return login(event)">
+                    <h2>Iniciar Sesión</h2>
+                    <div class="form_input">
+                        <label for="email">Usuario:</label>
+                        <input type="email" id="email" name="email" required placeholder="Usuario del sistema" />
+                    </div>
+                    <div class="form_input">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required placeholder="Password de usuario" />
+                    </div>
+                    <div class="form_input">
+                        <button aria-label="Iniciar Sesión" type="submit">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Ventana Modal View Project -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('projectModal').style.display='none'">&times;</span>
+                <form id="projectForm" onsubmit="return project(event)">
+                    <input type="hidden" id="id" name="id" />
+                    <h2>Vista del Proyecto</h2>
+                    <div class="form_input">
+                        <label for="nombre_proyecto">Nombre del Proyecto:</label>
+                        <input type="text" id="nombre_proyecto" name="nombre_proyecto" required placeholder="Nombre del Proyecto" />
+                    </div>
+                    <div class="form_input">
+                        <label for="descripcion_proyecto">Descripción del Proyecto:</label>
+                        <input type="text" id="descripcion_proyecto" name="descripcion_proyecto" required placeholder="Descripción del Proyecto" />
+                    </div>
+                    <div class="form_input">
+                        <button type="button" id="reg-proy" aria-label="Registrar Proyecto" onclick="registrarProyecto()">Registrar</button>
+                        <button type="button" id="upd-proy" aria-label="Modificar Proyecto" onclick="editarProyecto()">Modificar</button>
+                        <button type="button" id="del-proy" aria-label="Eliminar Proyecto" onclick="eliminarProyecto()">Eliminar</button>
+                        <button type="button" class="close-button" aria-label="Cerrar Ventana" onclick="document.getElementById('projectModal').style.display='none'">Cerrar</button>
+                    </div>
+                </form>
             </div>
         </div>
         
         <!-- Scripts de javascript y llamados -->
         <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script src="js/script.js"></script>
-        <script>
-            fetchNews();
-            clima();
-            setInterval(fetchNews, 600000);
-            setInterval(clima, 600000);
-            proyectosList();
-        </script>
     </body>
 </html>

@@ -22,7 +22,7 @@ header {
     margin: 10px auto;
     max-width: 100px; /* Ajusta este valor según tus necesidades */
     border-radius: 50%; /* Esto hará que la imagen sea circular */
-  }
+}
 
 /* Estilo para el h1 que se encuentra en el header */
 header h1 {
@@ -55,6 +55,7 @@ nav ul li a {
     color: #e2dfdf;
     font-size: 12px;
     cursor: pointer;
+    text-align: right;
 }
 
 #toggle-mode .fa-moon {
@@ -133,6 +134,9 @@ aside {
     min-width: 250px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 aside h2 {
@@ -171,6 +175,38 @@ aside .extra-section {
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 1.5em;
+}
+
+.btn-log {
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login {
+    background-color: #007BFF; /* Azul */
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+.logoutBtn {
+  background-color: rgb(238, 210, 167); /* Color original del botón */
+  color: rgb(49, 48, 48);
+}
+
+.logoutBtn:hover {
+  background-color: rgba(255, 0, 0, 0.205); /* Color del botón cuando se coloque el cursor sobre él */
+  color: rgb(49, 48, 48);
 }
 
 /* Estilo para el pie de página */
@@ -315,13 +351,13 @@ option {
     background-color: #ededed;
 }
 
-button[type="submit"] {
+button {
     background-color: #a9b1af; /* Color de fondo del botón */
     color: white; /* Color del texto */
     border: none; /* Sin borde */
     padding: 10px 20px; /* Espaciado dentro del botón */
     font-size: 1em; /* Tamaño de la fuente */
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 12px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor a un puntero al pasar el mouse */
     transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
     margin-top: 20px;
@@ -329,7 +365,7 @@ button[type="submit"] {
     width: 80%;
 }
 
-button[type="submit"]:hover {
+button:hover {
     background-color: rgb(101, 151, 243); /* Color de fondo al pasar el mouse */
 }
 
@@ -451,6 +487,145 @@ body.dark-mode select {
 body.dark-mode option {
   background-color: transparent; /* Color de fondo de las opciones en modo oscuro */
   color: #636364e1; /* Color del texto de las opciones en modo oscuro */
+}
+
+body.dark-mode #project-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #ddb6c2;
+    color: white;
+}
+
+body.dark-mode #project-table tr:nth-child(even) {
+    background-color: #fceaea;
+    color: #000000;
+}
+
+body.dark-mode #project-table tr:hover {
+    background-color: #e4f3f8;
+    color: #000000;
+}
+
+/* Tabla de proyectos admin */
+#project-admin {
+    margin: 0px;
+}
+
+#project-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#project-table th, #project-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#project-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#project-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#project-table tr:hover {
+    background-color: #ddd;
+}
+
+.name-column {
+    font-weight: bold;
+    text-align: center;
+}
+
+.description-column {
+    text-align: justify;
+}
+
+.action-buttons {
+    text-align: center;
+}
+
+.action-button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.show-button {
+    background-color: #4c90af;
+}
+
+.add-button {
+    background-color: #6e6e54;
+    margin-top: .6em;
+}
+
+.edit-button {
+    background-color: #4CAF50;
+}
+
+.delete-button {
+    background-color: #f44336;
+}
+
+.action-buttons button:hover {
+    background-color: rgb(46, 43, 41);
+}
+
+.close-button {
+    background-color: #1e88eb; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px 2px; /* Margen */
+    cursor: pointer; /* Manito de clic */
+    border-radius: 12px; /* Bordes redondeados */
+}
+
+.close-button:hover {
+    background-color: rgb(46, 43, 41); /* Color de fondo al pasar el cursor */
+}
+
+#reg-proy {
+    background-color: #f7f31a; /* Color de fondo del botón */
+    color: rgb(14, 13, 13); /* Color del texto */
+}
+
+#reg-proy:hover {
+    background-color: #8d8b09; /* Color de fondo del botón */
+    color: rgb(233, 233, 233); /* Color del texto */
+}
+
+#upd-proy {
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: rgb(14, 13, 13); /* Color del texto */
+}
+
+#upd-proy:hover {
+    background-color: #045f0cec; /* Color de fondo del botón */
+    color: rgb(233, 233, 233); /* Color del texto */
+}
+
+#del-proy {
+    background-color: #f44336; /* Color de fondo del botón */
+    color: rgb(14, 13, 13); /* Color del texto */
+}
+
+#del-proy:hover {
+    background-color: #810f06e5; /* Color de fondo del botón */
+    color: rgb(233, 233, 233); /* Color del texto */
 }
 
 /* Media query para pantallas con ancho menor o igual a 1650px */
